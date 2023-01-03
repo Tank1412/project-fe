@@ -42,14 +42,38 @@ li:hover {
     background-color: gray !important;
 }
 
+.btn-outline-success {
+    background-color: gray;
+    color: #F5CE21
+}
+
+.btn-outline-success:hover {
+    background-color: #fff;
+    color: #F5CE21
+}
+
+.right {
+    margin-left: 10px;
+}
+
 .flex-column img {
     width: 300px;
     height: 300px;
+}
+
+.text-muted {
+    background-color: #03fcba;
 }
 
 @media screen and (max-width: 769px) {
     .container img {
         width: 100px;
         height: 100px;
+    }
+    .image {
+        text-align: center;
+    }
+    .text-md-center {
+        text-align: center;
     }
 }
