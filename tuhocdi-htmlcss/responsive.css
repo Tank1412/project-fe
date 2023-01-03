@@ -66,8 +66,19 @@
     }
 }
 
-
-/* @media screen and (max-width: 739px) {
+@media screen and (max-width: 739px) {
+    .header__login {
+        display: none;
+    }
+    .icon__left {
+        display: none;
+    }
+    .bar {
+        margin-left: 10px;
+    }
+    .header__navwrap {
+        display: none;
+    }
     .footer__wrap__rules {
         height: 220px;
         flex-direction: column;
@@ -78,4 +89,4 @@
     .footer__wrap__brand__bot {
         height: 100px;
     }
-} */
+}
