@@ -3,10 +3,16 @@
     background-color: #fff;
 }
 
-.header {
+header {
     background: url(/images/ngu.jpg) no-repeat center/cover;
     background-image: 2000px;
     height: 300px;
+}
+
+.head {
+    position: fixed;
+    z-index: 50;
+    width: 1320px;
 }
 
 .container img {
@@ -34,6 +40,11 @@
     margin-top: 20px;
 }
 
+
+/* .box {
+    border: 1px solid #808080;
+} */
+
 li {
     list-style: none;
 }
@@ -52,6 +63,10 @@ li:hover {
     color: #F5CE21
 }
 
+.title {
+    border: 1px solid #BBABB2;
+}
+
 .right {
     margin-left: 10px;
 }
@@ -63,17 +78,4 @@ li:hover {
 
 .text-muted {
     background-color: #03fcba;
-}
-
-@media screen and (max-width: 769px) {
-    .container img {
-        width: 100px;
-        height: 100px;
-    }
-    .image {
-        text-align: center;
-    }
-    .text-md-center {
-        text-align: center;
-    }
 }
