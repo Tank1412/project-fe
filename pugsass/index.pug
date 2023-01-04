@@ -1,0 +1,157 @@
+mixin recommend(link, image, title, summary, date, events, info)
+    li.recommend__item()
+        a.news__title.ellipsis(href= link)
+            .recommend__imgwrap
+                img.recommend__img.coverfit(src= image)
+            h3.recommend__title= title
+            p.recommend__summary= summary 
+        .recommend__meta 
+            span.recommend__date=date 
+            //- span.recommend__category=category   
+            span.recommend__category-events=events 
+            span.recommend__category-info=info 
+
+mixin news(link, image, title, summary, date, href, events, info) 
+    li.news__item 
+        a.news__title.news__content.ellipsis(href= link)
+            img.coverfit(src= image)
+            .news__info 
+                h3= title 
+                p.news__summary= summary  
+        .news__meta 
+            .news__date= date   
+            //- a.news__category(href=href)= type
+            a.news__category-events(href=href)= events
+            a.news__category-info(href=href)= info
+        
+
+
+doctype html
+html
+    head
+        title Genshin Impact - Step Into a Vast Magical World of Adventure
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="icon" type="image/icon-jpg" href="/images/eheee.jpg")
+        link(rel="stylesheet" type="text/css" href="/style/reset.css")
+        link(rel="stylesheet" type="text/css" href="/style/index.css")
+        link(rel="stylesheet" type="text/css" href="/style/responsive.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css")
+    body
+        .home
+            header
+                .bar
+                    i.fa-solid.fa-bars
+                .icon__left
+                    i.fa.fa-volume-down
+                .header__img
+                    img(src='/images/download.png')
+                .header__navwrap
+                    .header__navbar
+                        a.header__navitem(href='') Trang Chủ
+                        a.header__navitem(href='') Tin Tức
+                        a.header__navitem(href='') Nhân Vật
+                        .header__navitem.dropdown
+                            p Tư liệu
+                            .icon
+                                i.fa.fa-caret-down
+                                ul.header__navitem__list
+                                    li.header__navlink 
+                                        a(href='https://genshin.hoyoverse.com/en/game') Giới thiệu game
+                                    li.header__navlink 
+                                        a(href='https://genshin.hoyoverse.com/en/map') Thế Giới
+                                    li.header__navlink 
+                                        a(href='https://genshin.hoyoverse.com/en/town') Tạp Chí
+                                    li.header__navlink 
+                                        a(href='https://genshin.hoyoverse.com/en/manga') Truyện Tranh
+                        .header__navitem.dropdown.more
+                            p Khác
+                            .icon
+                                i.fa.fa-caret-down
+                                ul.header__navitem__list.more
+                                    li.header__navlink.more 
+                                        a(href='https://www.hoyolab.com/home?utm_source=officialweb&utm_medium=game&utm_campaign=nav&utm_id=2', target='_blank') HoYoLAB
+                                    li.header__navlink.more 
+                                        a(href='https://sdk.hoyoverse.com/payment/genshin/index.html#/', target='_blank') Trung Tâm Nạp
+                                    li.header__navlink.more 
+                                        a(href='https://genshin.hoyoverse.com/vi/gift') Mã Quà
+                        a.header__navitem.collapse(href='https://www.hoyolab.com/home?utm_source=officialweb&utm_medium=game&utm_campaign=nav&utm_id=2', target='_blank') HoYoLAB
+                        a.header__navitem.collapse(href='https://sdk.hoyoverse.com/payment/genshin/index.html#/', target='_blank') Trung Tâm Nạp
+                        a.header__navitem.collapse(href='https://genshin.hoyoverse.com/vi/gift') Mã Quà
+                .header__login
+                    button.login
+                        span Đăng Nhập
+                        img(src='/images/login.png', alt='login-icon')
+                .header__download
+                        img(src='/images/taigame.png', alt='download')
+            .body
+                ul.recommend
+                    +recommend('https://genshin.hoyoverse.com/en/news/detail/28380','/images/ayato.jpg', 'Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring', "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire.", 'Dec 27, 2022','', 'Thông tin' ) 
+                    +recommend('https://genshin.hoyoverse.com/en/news/detail/28358','/images/ayato,ei.jpg', 'HoYoLAB x Prime Gaming Event: Kamisato Ayato and Raiden Shogun Reruns: Take Part in the Topic Events to Win Primogems', "This time, we'll be meeting Kamisato Ayato and Raiden Shogun! Come take part in the discussion events~", 'Dec 27, 2022','Sự kiện', '') 
+                    +recommend('https://genshin.hoyoverse.com/en/news/detail/28315','/images/bannerei.jpg', 'Event Wishes Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Event Wishes "Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Dec 22, 2022','', 'Thông tin')                                        
+                    li.recommend__item-carousel
+                        a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
+                            .recommend__imgwrap
+                                img.recommend__img.coverfit(src= '/images/ayato.jpg')
+                            h3.recommend__title Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring
+                            p.recommend__summary "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire."
+                        .recommend__meta 
+                            span.recommend__date Dec 27, 2022                                
+                            span.recommend__category-info Thông tin
+                    li.recommend__item-carousel
+                        a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
+                            .recommend__imgwrap
+                                img.recommend__img.coverfit(src= '/images/ayato,ei.jpg')
+                            h3.recommend__title Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring
+                            p.recommend__summary "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire."
+                        .recommend__meta 
+                            span.recommend__date Dec 27, 2022                                
+                            span.recommend__category-info Thông tin
+                    a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+                        span.carousel-control-prev-icon(aria-hidden='true')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+                        span.carousel-control-next-icon(aria-hidden='true')
+                        span.sr-only Next
+                ul.category 
+                    li.category__item.category__item--active Latest
+                    li.category__item Info
+                    li.category__item Updates
+                    li.category__item Events                                                      
+                ul.news 
+                    +news('https://genshin.hoyoverse.com/en/news/detail/28230', '/images/paimon.jpg', 'Twitter #WishesfromTeyvat Celebration Event Rules', "Win prizes such as official Genshin Impact merchandise and Amazon gift cards worth 75 USD!", 'Dec 27, 2022' , 'https://genshin.hoyoverse.com/en/news/11','', 'Info')
+                    +news('https://genshin.hoyoverse.com/en/news/detail/28380', '/images/ayato.jpg', 'Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring', "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire.", 'Dec 27, 2022', 'https://genshin.hoyoverse.com/en/news/11','', 'Info')
+                    +news('https://genshin.hoyoverse.com/en/news/detail/28358', '/images/ayato,ei.jpg', 'HoYoLAB x Prime Gaming Event: Kamisato Ayato and Raiden Shogun Reruns: Take Part in the Topic Events to Win Primogems', "This time, we'll be meeting Kamisato Ayato and Raiden Shogun! Come take part in the discussion events~", 'Dec 27, 2022','https://genshin.hoyoverse.com/en/news/13', 'Events', '')
+                    +news('https://genshin.hoyoverse.com/en/news/detail/28321', '/images/scara.jpg', '"All Senses Clear, All Existence Void" Version 3.3 Events Preview - Phase II', "Hello Travelers! Let's take a look at the upcoming events!", 'Dec 22, 2022', 'https://genshin.hoyoverse.com/en/news/11','', 'Info')
+                    +news('https://genshin.hoyoverse.com/en/news/detail/28315', '/images/bannerei.jpg', 'Event Wishes "Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Event Wishes "Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Dec 22, 2022', 'https://genshin.hoyoverse.com/en/news/11','', 'Info')
+                    li.news__more More
+            footer
+                nav.footer__top 
+                    a(href='https://www.facebook.com/GenshinImpact.vi/', target='_blank') 
+                        i.fa-brands.fa-facebook-f
+                    a(href='https://twitter.com/GenshinImpact', target='_blank')
+                        i.fa-brands.fa-twitter
+                    a(href='https://www.youtube.com/c/GenshinImpact', target='_blank')
+                        i.fa-brands.fa-youtube
+                    a(href='https://www.instagram.com/genshinimpact/', target='_blank')
+                        i.fa-brands.fa-instagram
+                    a(href='https://discord.com/invite/genshinimpact/', target='_blank')
+                        i.fa-brands.fa-discord
+                    a(href='https://www.reddit.com/r/Genshin_Impact/', target='_blank')
+                        i.fa-brands.fa-reddit-alien
+                .footer__wrap__logo
+                    img(src='/images/logoGI.png', height='70px', alt='logo-game')
+                .footer__wrap__rules
+                    a.footer__wrap__rules__lists(href='https://genshin.hoyoverse.com/vi/company/privacy', target='_blank') Chính Sách Về Quyền Riêng Tư
+                    a.footer__wrap__rules__lists(href='https://genshin.hoyoverse.com/vi/company/terms', target='_blank') Điều Khoản Dịch Vụ
+                    a.footer__wrap__rules__lists(href='https://www.hoyoverse.com/vi-vn/about-us?utm_source=genshin&utm_medium=footer', target='_blank') Giới Thiệu Công Ty
+                    a.footer__wrap__rules__lists(href='') Liên Hệ Chúng Tôi
+                .footer__wrap__brand__top
+                    p "PlayStation Family Mark," "PS5 logo" and "PS4 logo" are registered trademarks or trademarks of Sony Interactive Entertainment Inc.
+                .footer__wrap__brand__bot
+                    p Epic, Epic Games, Epic Games Store, the Epic Games Store logo, and Epic Online Services are trademarks and/or registered trademarks of Epic Games. All other trademarks are the property of their respective owners.
+                .footer__wrap__logo__brand
+                    a(href='https://www.hoyoverse.com/vi-vn?utm_source=genshin&utm_medium=footer', target='_blank')
+                    img(src='/images/logobrand.png', style='height: 60px;', alt='logo-brand')
+                .footer__wrap__license
+                    p Copyright © COGNOSPHERE. All Rights Reserved.

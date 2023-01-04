@@ -1,0 +1,27 @@
+$main-color: #F0F0F0;
+$main-font: Tahoma,
+Helvetica,
+Arial,
+sans-serif;
+@import 'header';
+@import 'body';
+@import 'footer';
+.home {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: $main-font !important;
+    background-color: $main-color;
+}
+
+.home::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: $main-color url(/images/bg.jpg) no-repeat center;
+    background-size: cover;
+}
