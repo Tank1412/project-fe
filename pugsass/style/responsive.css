@@ -1,8 +1,11 @@
-@media screen and (max-width: 1920px) {
-    .header__navitem.dropdown.more {
-        display: none;
+@media screen and (max-width: 7680px) {
+    .home {
+        height: 2400px;
     }
     .recommend__item-carousel {
+        display: none;
+    }
+    .header__navitem.dropdown.more {
         display: none;
     }
 }
