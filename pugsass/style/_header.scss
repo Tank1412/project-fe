@@ -1,17 +1,18 @@
+$icon-header-color: #b8b6b4;
+$text-header-color: #ccc;
+$main-header-color: #fff;
 header {
     background: rgba(17, 17, 17, 0.75);
     width: 100%;
     height: 66px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    @include flex;
     position: fixed;
     z-index: 2;
     .bar {
         margin-top: 20px;
         margin-left: 80px;
         background: none;
-        color: #b8b6b4;
+        color: $icon-header-color;
         font-size: 24px;
         display: none;
     }
@@ -19,12 +20,11 @@ header {
         margin-top: 20px;
         margin-left: 80px;
         background: none;
-        color: #b8b6b4;
+        color: $icon-header-color;
         font-size: 24px;
     }
     .header__img {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
+        @include box-sizing;
         float: left;
         width: 317px;
         height: 105px;
@@ -40,22 +40,16 @@ header {
         margin-left: -50px;
         width: 652.94px;
         height: 69px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        @include flex;
     }
     .header__navitem {
-        color: #ccc;
+        color: $text-header-color;
         text-decoration: none;
         font-size: 14px;
         word-spacing: 1px;
         margin: 0 16px;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        @include align;
+        @include flex;
         float: left;
         width: auto;
         height: 66px;
@@ -63,24 +57,24 @@ header {
         font-family: $main-font !important;
         &:hover {
             text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
-            color: white;
+            color: $main-header-color;
             border-top: 5px #69E0FF solid;
         }
     }
     .dropdown:hover .header__navlink {
-        color: white;
+        color: $main-header-color;
         text-shadow: none;
     }
     .icon {
         margin-left: 5px;
         background: none;
-        color: #b8b6b4;
+        color: $icon-header-color;
         font-size: 14px;
     }
     .header__navitem__list {
         list-style: none;
         font-size: 14px;
-        color: #fff;
+        color: $main-header-color;
         word-spacing: 1px;
         margin-left: -65px;
         margin-top: 24px;
@@ -94,11 +88,11 @@ header {
     .dropdown:hover .header__navitem__list {
         display: block;
         margin-top: 20px;
-        color: white;
+        color: $main-header-color;
     }
     .header__navitem__list a {
         text-decoration: none;
-        color: white;
+        color: $main-header-color;
     }
     .header__navlink {
         width: 100%;
@@ -112,11 +106,10 @@ header {
     .header__navitem__list.more {
         list-style: none;
         font-size: 14px;
-        color: #fff;
+        color: $main-header-color;
         word-spacing: 1px;
         margin-left: -65px;
         margin-top: 24px;
-        background-color: #2F2D2D;
         width: 160px;
         height: 190px;
         position: absolute;
@@ -124,12 +117,8 @@ header {
         display: none;
     }
     .header__login {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
+        @include flex;
+        @include justifyend;
         position: absolute;
         top: 0;
         right: 210px;
@@ -138,19 +127,15 @@ header {
         font-family: $main-font;
     }
     .header__login .login {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+        @include flex;
+        @include align;
         padding: 0 10px;
         border: 0;
         outline: none;
         background: none;
         font-size: inherit;
-        font-family: inherit;
-        color: #ccc;
+        font-family: $main-font;
+        color: $text-header-color;
         cursor: pointer;
     }
     .header__login .login img {
@@ -160,7 +145,7 @@ header {
         opacity: 0.6;
     }
     .login:hover {
-        color: white;
+        color: $main-header-color;
     }
     .header__download {
         position: absolute;

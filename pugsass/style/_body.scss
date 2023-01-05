@@ -1,5 +1,42 @@
-@mixin color($color: #ffc000) {
-    color: $color;
+$color-body-title: #393b40;
+$color-info: #9f3;
+$color-events: #ffc000;
+$color-update: #bc80ff;
+$color-category-item: #f4d8a8;
+$color-date: #999;
+@mixin transform($X: 1.2) {
+    -webkit-transform: scale($X);
+    -ms-transform: scale($X);
+    transform: scale($X);
+}
+
+@mixin transition-duration($X: 0.5s, $Y: 1s, $Z: 2s, $W: 4s) {
+    -webkit-transition-duration: $X;
+    -o-transition-duration: $X;
+    transition-duration: $X;
+}
+
+@mixin transition-delay($X: 0.5s, $Y: 1s, $Z: 2s, $W: 4s) {
+    -webkit-transition-delay: $X;
+    -o-transition-delay: $X;
+    transition-delay: $X;
+}
+
+@mixin transition-timing-function($X: ease, $Y: linear, $Z: ease-in, $W: ease-out, $ZW: ease-in-out) {
+    -webkit-transition-timing-function: $X;
+    -o-transition-timing-function: $X;
+    transition-timing-function: $X;
+}
+
+@mixin transition-property($X: none, $Y: height, $Z: all) {
+    -webkit-transition-property: $Z;
+    -o-transition-property: $Z;
+    transition-property: $Z;
+}
+
+@mixin text-overflow {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
 .body {
@@ -11,12 +48,8 @@
     min-height: 1240px;
     padding-bottom: 208px;
     .recommend {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+        @include flex;
+        @include justifysb;
         padding-top: 146px;
         width: 100%;
         height: 550px;
@@ -39,27 +72,17 @@
         opacity: 0.9;
     }
     .recommend__item img {
+        @include transition-duration;
+        @include transition-delay;
+        @include transition-timing-function;
+        @include transition-property;
         -webkit-transition: all 0.5s 0s ease;
         -o-transition: all 0.5s 0s ease;
         transition: all 0.5s 0s ease;
-        -webkit-transition-duration: 0.5s;
-        -o-transition-duration: 0.5s;
-        transition-duration: 0.5s;
-        -webkit-transition-timing-function: ease;
-        -o-transition-timing-function: ease;
-        transition-timing-function: ease;
-        -webkit-transition-delay: 0s;
-        -o-transition-delay: 0s;
-        transition-delay: 0s;
-        -webkit-transition-property: all;
-        -o-transition-property: all;
-        transition-property: all;
     }
     .recommend__item:hover img {
         opacity: 1;
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
+        @include transform;
     }
     .recommend__item-carousel {
         position: relative;
@@ -71,27 +94,17 @@
         margin-left: 400px;
     }
     .recommend__item-carousel img {
+        @include transition-duration;
+        @include transition-delay;
+        @include transition-timing-function;
+        @include transition-property;
         -webkit-transition: all 0.5s 0s ease;
         -o-transition: all 0.5s 0s ease;
         transition: all 0.5s 0s ease;
-        -webkit-transition-duration: 0.5s;
-        -o-transition-duration: 0.5s;
-        transition-duration: 0.5s;
-        -webkit-transition-timing-function: ease;
-        -o-transition-timing-function: ease;
-        transition-timing-function: ease;
-        -webkit-transition-delay: 0s;
-        -o-transition-delay: 0s;
-        transition-delay: 0s;
-        -webkit-transition-property: all;
-        -o-transition-property: all;
-        transition-property: all;
     }
     .recommend__item-carousel:hover img {
         opacity: 1;
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
+        @include transform;
     }
     .news__title {
         position: relative;
@@ -100,14 +113,13 @@
         width: 100%;
         height: 100%;
         font-size: 24px;
-        color: #393b40;
+        color: $color-body-title;
         text-decoration: none;
         overflow: hidden;
     }
     .news__title .ellipsis {
         overflow: hidden;
-        -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+        @include text-overflow;
         white-space: nowrap;
     }
     .recommend__imgwrap {
@@ -126,8 +138,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         overflow: hidden;
-        -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+        @include text-overflow;
         -webkit-box-orient: vertical;
         white-space: normal;
         max-height: 70px;
@@ -138,7 +149,7 @@
         width: 100%;
         font-size: 16px;
         line-height: 22px;
-        color: #fff;
+        color: $main-color;
         padding: 0 17px;
         max-height: 88px;
         overflow: hidden;
@@ -146,41 +157,36 @@
         white-space: normal;
     }
     .recommend__meta {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+        @include flex;
+        @include justifysb;
+        @include box-sizing;
         position: absolute;
         left: 0;
         bottom: 15px;
         width: 100%;
         padding: 0 20px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
     }
     .recommend__date {
         display: inline-block;
-        color: #808080;
+        color: $color-date;
         font-size: 16px;
         line-height: 22px;
     }
     .recommend__category-events {
-        @include color;
+        color: $color-events;
         text-align: right;
         margin-right: -240px;
     }
     .recommend__category-info {
-        @include color($color: #9f3);
+        color: $color-info;
     }
     .category {
         margin-top: 38px;
         list-style-type: none;
     }
     .category__item--active {
-        background-color: #393b40 !important;
-        color: #f4d8a8 !important;
+        background-color: $color-body-title !important;
+        color: $color-category-item !important;
     }
     .category__item {
         display: inline-block;
@@ -194,8 +200,8 @@
         margin-right: 20px;
         cursor: pointer;
         &:hover {
-            background-color: #393b40;
-            color: #f4d8a8;
+            background-color: $color-body-title;
+            color: $color-category-item;
         }
     }
     .news {
@@ -231,9 +237,7 @@
     //     border: 3px solid rgba(57, 59, 64, 0.15);
     // }
     .news__content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        @include flex;
     }
     .news__content img {
         width: 265px;
@@ -241,8 +245,7 @@
         margin-right: 20px;
     }
     .ellipsis {
-        -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+        @include text-overflow;
         white-space: nowrap;
     }
     .news__info {
@@ -270,30 +273,25 @@
         z-index: 1;
         bottom: 46px;
         right: 0;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
+        @include flex;
+        @include justifyend;
         width: 300px;
         padding: 0 20px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
+        @include box-sizing;
         margin-bottom: -32px;
     }
     .news__date {
-        color: #999;
+        color: $color-date;
     }
     .news__category-events {
-        @include color;
+        color: $color-events;
         width: 30px;
         text-decoration: none;
         cursor: pointer;
         margin-left: 56px;
     }
     .news__category-info {
-        @include color($color: #9f3);
+        color: $color-info;
         width: 30px;
         text-decoration: none;
         cursor: pointer;
@@ -302,12 +300,12 @@
     .news__more {
         height: 40px;
         line-height: 40px;
-        background-color: #393b40;
+        background-color: $color-body-title;
         border-radius: 4px;
         opacity: 0.8;
         text-align: center;
         font-size: 18px;
-        color: #fff;
+        color: $main-header-color;
         cursor: pointer;
         -webkit-transition: opacity 0.2s linear;
         -o-transition: opacity 0.2s linear;
