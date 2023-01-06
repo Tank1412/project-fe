@@ -1,0 +1,34 @@
+mixin rules(link, target, content)
+    a.footer__wrap__rules__lists(href= link, target=target)
+        span= content
+
+footer
+    nav.footer__top 
+        a(href='https://www.facebook.com/GenshinImpact.vi/', target='_blank') 
+            i.fa-brands.fa-facebook-f
+        a(href='https://twitter.com/GenshinImpact', target='_blank')
+            i.fa-brands.fa-twitter
+        a(href='https://www.youtube.com/c/GenshinImpact', target='_blank')
+            i.fa-brands.fa-youtube
+        a(href='https://www.instagram.com/genshinimpact/', target='_blank')
+            i.fa-brands.fa-instagram
+        a(href='https://discord.com/invite/genshinimpact/', target='_blank')
+            i.fa-brands.fa-discord
+        a(href='https://www.reddit.com/r/Genshin_Impact/', target='_blank')
+            i.fa-brands.fa-reddit-alien        
+    .footer__wrap__logo
+        img(src='/images/logoGI.png', alt='logo-game')
+    .footer__wrap__rules
+        +rules('https://genshin.hoyoverse.com/vi/company/privacy', '_blank', 'Chính Sách Về Quyền Riêng Tư')
+        +rules('https://genshin.hoyoverse.com/vi/company/terms', '_blank', 'Điều Khoản Dịch Vụ')
+        +rules('https://www.hoyoverse.com/vi-vn/about-us?utm_source=genshin&utm_medium=footer', '_blank', 'Giới Thiệu Công Ty')
+        +rules('','', 'Liên Hệ Chúng Tôi')
+    .footer__wrap__brand__top
+        p "PlayStation Family Mark," "PS5 logo" and "PS4 logo" are registered trademarks or trademarks of Sony Interactive Entertainment Inc.
+    .footer__wrap__brand__bot
+        p Epic, Epic Games, Epic Games Store, the Epic Games Store logo, and Epic Online Services are trademarks and/or registered trademarks of Epic Games. All other trademarks are the property of their respective owners.
+    .footer__wrap__logo__brand
+        a(href='https://www.hoyoverse.com/vi-vn?utm_source=genshin&utm_medium=footer', target='_blank')
+        img(src='/images/logobrand.png', alt='logo-brand')
+    .footer__wrap__license
+        p Copyright © COGNOSPHERE. All Rights Reserved.
