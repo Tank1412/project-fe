@@ -32,30 +32,30 @@ mixin item(name)
         +recommend('https://genshin.hoyoverse.com/en/news/detail/28380','/images/ayato.jpg', 'Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring', "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire.", 'Dec 27, 2022','', 'Thông tin' ) 
         +recommend('https://genshin.hoyoverse.com/en/news/detail/28358','/images/ayato,ei.jpg', 'HoYoLAB x Prime Gaming Event: Kamisato Ayato and Raiden Shogun Reruns: Take Part in the Topic Events to Win Primogems', "This time, we'll be meeting Kamisato Ayato and Raiden Shogun! Come take part in the discussion events~", 'Dec 27, 2022','Sự kiện', '') 
         +recommend('https://genshin.hoyoverse.com/en/news/detail/28315','/images/bannerei.jpg', 'Event Wishes Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Event Wishes "Reign of Serenity," "Azure Excursion," and "Epitome Invocation" Announcement', 'Dec 22, 2022','', 'Thông tin')                                        
-        //- li.recommend__item-carousel
-        //-     a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
-        //-         .recommend__imgwrap
-        //-             img.recommend__img.coverfit(src= '/images/ayato.jpg')
-        //-         h3.recommend__title Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring
-        //-         p.recommend__summary "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire."
-        //-     .recommend__meta 
-        //-         span.recommend__date Dec 27, 2022                                
-        //-         span.recommend__category-info Thông tin
-        //- li.recommend__item-carousel
-        //-     a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
-        //-         .recommend__imgwrap
-        //-             img.recommend__img.coverfit(src= '/images/ayato,ei.jpg')
-        //-         h3.recommend__title Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring
-        //-         p.recommend__summary "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire."
-        //-     .recommend__meta 
-        //-         span.recommend__date Dec 27, 2022                                
-        //-         span.recommend__category-info Thông tin
-        //- a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+        li.recommend__item-carousel
+            a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
+                .recommend__imgwrap
+                    img.recommend__img.coverfit(src= '/images/ayato.jpg')
+                h3.recommend__title Genshin Impact EP - Strolling Beneath a Moon Awaiting Spring
+                p.recommend__summary "At year's end, the cold winds utter breaths of absolute silence as fallen leaves encase the world entire."
+            .recommend__meta 
+                span.recommend__date Dec 27, 2022                                
+                span.recommend__category-info Thông tin
+        li.recommend__item-carousel
+            a.news__title.ellipsis(href='https://genshin.hoyoverse.com/en/news/detail/28380')
+                .recommend__imgwrap
+                    img.recommend__img.coverfit(src= '/images/ayato,ei.jpg')
+                h3.recommend__title HoYoLAB x Prime Gaming Event: Kamisato Ayato and Raiden Shogun Reruns: Take Part in the Topic Events to Win Primogems
+                p.recommend__summary "This time, we'll be meeting Kamisato Ayato and Raiden Shogun! Come take part in the discussion events~""
+            .recommend__meta 
+                span.recommend__date Dec 27, 2022                                
+                span.recommend__category-info Sự kiện
+        //- button.carousel-control-prev(type='button', data-bs-target='#carouselExampleAutoplaying', data-bs-slide='prev')
         //-     span.carousel-control-prev-icon(aria-hidden='true')
-        //-     span.sr-only Previous
-        //- a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+        //-     span.visually-hidden Previous
+        //- button.carousel-control-next(type='button', data-bs-target='#carouselExampleAutoplaying', data-bs-slide='next')
         //-     span.carousel-control-next-icon(aria-hidden='true')
-        //-     span.sr-only Next
+        //-     span.visually-hidden Next
     ul.category 
         li.category__item.category__item--active Latest
         +item('Info')
